@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Classifier</title>
+
+    <!-- google fonts css file link  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+<header>
+    <!-- <a href="#" class="logo">techno</a> -->
+    <a href="#" class="logo"><img src="robo-icon-f.png" alt="robot" height="50px" width="50px"></a>
+
+    <div id="menu" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#classifier">CLASSIFIER</a></li>
+            <li><a href="#team">TEAM</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- header section ends -->
+
+<!-- home section starts  -->
+<section class="home" id="home">
+
+    <div class="content">
+        <h1>Sort Smarter,Communicate Better</h1>
+        <p>"Experience a smarter inbox with our AI-driven email classifier! Seamlessly separate spam from important messages, ensuring a clutter-free and secure email experience every time."</p>
+    </div>
+
+    <div class="image">
+        <img src="robot1_bg_removed.png.png" alt="IMAGE">
+    </div>
+
+</section>
+<!-- home section ends -->
+
+<!-- about section starts  -->
+<section class="about" id="about">
+
+<h1 class="heading">About our Classifier</h1>
+
+<div class="row">
+
+    <div class="image">
+        <img src="robot2_bg_removed.png.png" alt="ROBOT2">
+    </div>
+
+    <div class="content">
+        <h3>Email Clarity at the click of a Button</h3>
+        <p>Our AI-powered email classifier is designed to make managing your inbox easier by automatically distinguishing between spam and genuine emails. Our classifier has been trained on vast datasets to accurately identify unwanted messages and prevent them from cluttering your inbox.</p>
+        <p> <i class="fas fa-check-circle"></i> High Accuracy </p>
+        <p> <i class="fas fa-check-circle"></i>Unusual Attachments</p>
+        <p> <i class="fas fa-check-circle"></i>Suspicious Links</p>
+        <p> <i class="fas fa-check-circle"></i>Excessive Promotional</p>
+    </div>
+
+</div>
+
+</section>
+<!-- about section ends -->
+
+<!-- classifier section starts  -->
+<section class="classifier" id="classifier">
+
+    <div class="content">
+        <h3>Classify Your Emails Now</h3>
+        <form action="{{ url_for('predict') }}" method="POST">
+            <textarea name="message" rows="10" cols="80" placeholder="Type your message here..." required></textarea><br><br>
+            <button type="submit" class="btn">SUBMIT</button>
+        </form>
+        {% if prediction %}
+        <div class="result">
+            <h4>Prediction Result:</h4>
+            <p>{{ prediction }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="classifier-image">
+        <img src="robot4-bg.png" alt="robot" height="550px" width="550px">
+    </div>
+    
+</section>
+<!-- classifier section ends  -->
+
+    
+<!-- team section starts  -->
+<section class="team" id="team">
+
+<h1 class="heading">The Team Making it Happen</h1>
+
+<div class="box-container">
+
+    <div class="box">
+        <div class="image">
+            <img src="lakshmi.jpg" alt="IMAGE">
+        </div>
+        <div class="content">
+            <h3>S LAKSHMIDURGA</h3>
+            <div class="price">1MV22CS135</div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="image">
+            <img src="sneha.jpg" alt="IMAGE">
+        </div>
+        <div class="content">
+            <h3>SNEHA SINGH</h3>
+            <div class="price">1MV22CS156</div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="image">
+            <img src="span1.jpg" alt="IMAGE">
+        </div>
+        <div class="content">
+            <h3>SPANDANA N.</h3>
+            <div class="price">1MV22CS159</div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="image">
+            <img src="TR.jpg" alt="image">
+        </div>
+        <div class="content">
+            <h3>TANYA RAIKWAR</h3>
+            <div class="price">1MV22CS166</div>
+        </div>
+    </div>
+
+</div>
+
+</section>
+<!-- team section ends -->
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="script.js"></script>
+
+
+
+</body>
+</html>
